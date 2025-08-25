@@ -1,0 +1,111 @@
+/* ================== GLOBAL STYLES ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header, footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ================== NAVIGATION (Flexbox) ================== */
+.navbar ul {
+  display: flex;                 /* Flexbox used here */
+  justify-content: center;       /* Center nav items */
+  list-style: none;
+  background: #444;
+}
+
+.navbar li {
+  margin: 0 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ================== MAIN LAYOUT (CSS Grid) ================== */
+.grid-container {
+  display: grid;                           /* Grid used here */
+  grid-template-columns: 3fr 1fr;          /* Content + Sidebar */
+  gap: 20px;
+  padding: 20px;
+}
+
+.content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar {
+  background: #eaeaea;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ================== CARDS (Flexbox inside Grid) ================== */
+.cards {
+  display: flex;     /* Flexbox used here */
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;
+  background: #ddd;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* ================== FOOTER ================== */
+footer {
+  margin-top: 20px;
+}
+
+/* ================== RESPONSIVE DESIGN ================== */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 2fr 1fr; /* Adjust column ratio */
+  }
+
+  .navbar ul {
+    flex-wrap: wrap; /* Allow nav items to wrap */
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack content & sidebar */
+  }
+
+  .cards {
+    flex-direction: column; /* Stack cards vertically */
+  }
+
+  .navbar ul {
+    flex-direction: column;  /* Stack nav items */
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 0.5rem 0;
+  }
+}
